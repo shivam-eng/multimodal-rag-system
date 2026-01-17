@@ -1,5 +1,1 @@
-.venv/
-__pycache__/
-.env
-image_index.faiss
-image_paths.npy
+
