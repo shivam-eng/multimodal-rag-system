@@ -1,6 +1,5 @@
 # 🔍 Multimodal RAG System — Text → Image Semantic Search
 
-![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
 ![CLIP](https://img.shields.io/badge/CLIP-ViT--B%2F32-blueviolet)
 ![FAISS](https://img.shields.io/badge/FAISS-Vector%20Search-orange)
