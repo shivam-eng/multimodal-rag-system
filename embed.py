@@ -21,7 +21,7 @@ for img_name in os.listdir(image_folder):
 
     embedding = embedding.cpu().numpy()
     image_embeddings.append(embedding)
-    image_paths.append(img_path)
+    image_paths.append(img_path.replace("\\", "/"))
 
 image_embeddings = np.vstack(image_embeddings)
 

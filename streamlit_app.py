@@ -7,7 +7,7 @@ Run: streamlit run streamlit_app.py
 import os
 import sys
 import time
-import streamlit as st
+import streamlit as st  # type: ignore[import]
 from PIL import Image
 
 # ── Page config ──────────────────────────────────────────────────────────────
@@ -181,7 +181,7 @@ def search_images(query_vec, system: dict, top_k: int):
     results = []
     for dist, idx in zip(distances[0], indices[0]):
         if idx != -1:
-            results.append({"path": system["image_paths"][idx], "score": float(dist)})
+            results.append({"path": system["image_paths"][idx].replace("\\", "/"), "score": float(dist)})
     return results
 
 
@@ -335,7 +335,7 @@ if search_clicked and query.strip():
     for i, (col, res) in enumerate(zip(cols, results)):
         with col:
             try:
-                img = Image.open(res["path"])
+                img = Image.open(res["path"].replace("\\", "/"))
                 col.image(img, use_container_width=True)
                 label = f"#{i+1} · {os.path.basename(res['path'])}"
                 if show_scores:
